@@ -1,0 +1,32 @@
+.read-more {
+
+	display: block;
+	width: auto;
+
+	margin-top: 15px;
+
+	float: right;
+	padding: 10px 15px;
+
+	border: 1px solid $read-more-border-color;
+
+	color: $read-more-border-color;
+
+	font-size: $read-more-font-size;
+	line-height: calc( #{$read-more-font-size} * 1.5 );
+
+	text-align: center;
+	text-decoration: none;
+
+	transition: all .3s linear;
+
+	&:hover {
+
+		border-color: $read-more-active-border-color;
+		color: $read-more-active-border-color;
+
+		transition: all .3s linear;
+
+	}
+
+}

@@ -1,0 +1,21 @@
+.main {
+
+	display: block;
+
+	padding: 50px 0;
+	padding-top: 150px;
+	min-height: calc( #{$footer-mobile-height} + 50px );
+
+	@include grid-media( $tablet-grid ) {
+
+		min-height: calc( #{ $footer-height } + 50px );
+
+	}
+
+	&--homepage {
+
+		padding-top: 50px;
+
+	}
+
+}

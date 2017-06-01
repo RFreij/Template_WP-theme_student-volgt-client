@@ -1,0 +1,72 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+
+	/* Config to press footer down */
+	position: relative;
+	padding-bottom: calc( #{$footer-mobile-height} + #{$copyright-height} );
+
+	@include grid-media( $tablet-grid ) {
+
+		padding-bottom: calc( #{$footer-height} + #{$copyright-height} );
+
+	}
+
+	min-height: 100%;
+	/* End */
+
+	font-family: $font-family;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	color: $grey-scaled;
+}
+
+p {
+
+	font-size: $font-size;
+	line-height: calc( #{$font-size} * 1.5 );
+	margin-bottom: calc( #{$font-size} * 1.5 );
+
+}
+
+h1, h2, h3 {
+
+	font-family: $titles-font-family;
+
+}
+
+h1 {
+
+	font-size: $titles-h1-font-size;
+	line-height: calc( #{$titles-h1-font-size} * 1.5 );
+
+}
+
+h2 {
+
+	font-size: $titles-h2-font-size;
+	line-height: calc( #{$titles-h2-font-size} * 1.5 );
+
+}
+
+h3 {
+
+}
+
+hr {
+	height: 1px;
+	width: 100%;
+	background-color: $divider-line-color;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	border: 0;
+}

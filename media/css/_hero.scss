@@ -1,0 +1,62 @@
+.hero {
+
+	display: table;
+
+	height: $hero-mobile-height;
+	width: 100%;
+
+	background: $hero-image;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	@include grid-media( $medium-grid ) {
+
+		height: $hero-medium-plus-height;
+
+	}
+
+	transition: height .2s linear;
+
+	&__slogan {
+
+		display: table-cell;
+		width: 100%;
+		height: 100%;
+
+		padding-top: $header-height; //Height of header to set the text in middle
+
+		text-align: center;
+		vertical-align: middle;
+
+		color: $slogan-text-color;
+		font-size: $slogan-font-size-mobile;
+		font-family: $slogan-font-family;
+		line-height: calc( #{$slogan-font-size-mobile} * 1.5 );
+
+		transition: font-size .3s linear;
+
+		@include grid-media( $medium-grid ) {
+
+			font-size: $slogan-font-size-tablet-plus;
+			line-height: calc( #{$slogan-font-size-tablet-plus} * 1.5 );
+
+			transition: font-size .3s linear;
+
+		}
+
+		&--tabbed {
+
+			padding-left: 50px;
+
+			@include grid-media( $medium-grid ) {
+
+				padding-left: 100px;
+
+			}
+
+		}
+
+	}
+
+}

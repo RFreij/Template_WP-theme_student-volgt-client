@@ -1,0 +1,114 @@
+.article {
+
+	margin-bottom: 25px;
+
+	&:last-child {
+
+		margin-bottom: 0;
+
+	}
+
+	&__small {
+
+		display: block;
+		margin-top: 10px;
+
+		font-size: $font-size;
+		line-height: calc( #{$font-size} * 1.5 );
+
+		&--clearfix {
+
+			content: " ";
+			display: block;
+			clear: both;
+
+		}
+
+	}
+
+	&__link {
+
+		display: inline-block;
+
+		text-decoration: none;
+		color: $article-link-color;
+
+		font-size: $article-date-font-size;
+		line-height: calc( #{$article-date-font-size} * 1.5 );
+
+		font-style: italic;
+
+		transition: all .3s linear;
+
+		&:hover {
+
+			color: $article-link-active-color;
+
+			transition: all .3s linear;
+
+		}
+
+	}
+
+	&__figure {
+		width: auto;
+	}
+
+	&__img {
+
+		width: 90%;
+		height: auto;
+
+		padding: 0;
+
+		margin: 0 auto;
+
+		@include grid-media( $tablet-grid ) {
+
+			width: 300px;
+
+			margin-left: 0;
+
+			&--preview {
+
+				float: left;
+				width: 200px;
+
+				padding-right: 15px;
+
+				margin-top: 20px;
+				margin-bottom: 15px;
+
+			}
+
+		}
+
+	}
+
+	&__content {
+
+		margin-top: 20px;
+		margin-bottom: 20px;
+
+	}
+
+	& ul {
+
+		padding-left: $padding-article-unordered-list;
+		margin-bottom: calc( #{$font-size} * 1.5 );
+
+		& li {
+
+			line-height: calc( #{$font-size} * 1.5 );
+
+		}
+
+	}
+
+}
+
+#disqus_thread {
+
+	margin-top: 20px;
+
+}

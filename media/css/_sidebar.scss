@@ -1,0 +1,90 @@
+.sidebar {
+
+	@include grid-column( 4 );
+
+	margin-bottom: $tablet-gutter;
+
+	@include grid-media( $tablet-grid ) {
+
+		@include grid-column( 4 );
+
+	}
+
+	@include grid-media( $medium-grid ) {
+
+		@include grid-column( 3 );
+
+	}
+
+	&__item, & ul  {  //Fix omdat widgets binnen wordpress & timber niet makkelijk zijn aan te passen.
+
+		margin-bottom: 35px;
+		margin-top: 25px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+
+			margin-bottom: 0;
+
+		}
+
+	}
+
+	& ul {
+		padding-left: 25px;
+	}
+
+	&__list {
+
+		margin-top: 25px;
+		list-style-type: none;
+		padding-left: 25px;
+
+	}
+
+	&__list-item, & ul li {
+
+		position: relative;
+
+		margin-bottom: 10px;
+
+		list-style-type: none;
+
+		&:before {
+
+			content: ' ';
+			width: 4px;
+			height: 4px;
+			background: $sidebar-link-color;
+			float: left;
+			position: absolute;
+			margin-top: 11px;
+			left: -10px;
+
+		}
+
+	}
+
+	&__link, & a {
+
+		text-decoration: none;
+		color: $sidebar-link-color;
+		font-size: $sidebar-link-font-size;
+		line-height: calc( #{$sidebar-link-font-size} * 1.5 );
+
+		transition: all .3s linear;
+
+		&:hover {
+
+			color: $sidebar-link-active-color;
+
+			transition: all .3s linear;
+
+		}
+
+	}
+
+}

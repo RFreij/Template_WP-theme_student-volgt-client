@@ -1,0 +1,3 @@
+@mixin getLineHeight( $font-size ) {
+	line-height: calc( #{$font-size} * 1.5 );
+}

@@ -1,0 +1,136 @@
+//columns
+$mobile-columns: 4;
+$tablet-columns: 12;
+$medium-columns: 12;
+$large-columns: 12;
+
+//Breakpoints
+$tablet-breakpoint: 768px;
+$medium-breakpoint: 992px;
+$large-breakpoint: 1200px;
+
+//Gutters
+$mobile-gutter: 10px;
+$tablet-gutter: 20px;
+$medium-gutter: 30px;
+$large-gutter: 30px;
+
+$grid-max-width: 1142px;
+
+//Default grid ( mobile )
+$neat-grid: (
+	columns: $mobile-columns,
+	gutter: $mobile-gutter,
+);
+
+//Custom grids
+$tablet-grid: (
+	columns: $tablet-columns,
+	gutter: $tablet-gutter,
+	media: $tablet-breakpoint,
+	color: rgba(#00d4ff, 0.25),
+	direction: ltr,
+);
+
+$medium-grid: (
+	columns: $medium-columns,
+	gutter: $medium-gutter,
+	media: $medium-breakpoint,
+	color: rgba(#00d4ff, 0.25),
+	direction: ltr,
+);
+
+$large-grid: (
+	columns: $large-columns,
+	gutter: $large-gutter,
+	media: $large-breakpoint,
+	color: rgba(#00d4ff, 0.25),
+	direction: ltr,
+);
+
+//Fonts import
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+
+// Colors.
+$white:                             rgb(255, 255, 255);
+$grey-10:                           rgb(197, 197, 197);
+$grey-20:                           rgb(73, 76, 80);
+$grey-30:                           rgb(189,189,189);
+$grey-lighten-2:                    rgb(224,224,224);
+$grey-lighten-1:                    #808080;
+$darkslategrey:                     rgb(39,39,39);
+$black:                             rgb(0, 0, 0);
+$grey-scaled:                       rgb(64, 64, 64);
+$deep-orange-accent:                rgb(233,102,86);
+
+// Descriptive colors.
+$color-light:                       $white;
+$color-text-default:                $grey-20;
+$color-text-lighter:                $grey-10;
+$color-text-darker:                 $black;
+$color-overlay:                     rgba($black, .7);
+$accent-color:                      $deep-orange-accent;
+
+// Global config
+$font-size:                         16px;
+$font-family:                       'Roboto', sans-serif;
+$transition-duration-default:       .3s;
+$divider-line-color:                rgba(0,0,0,0.10);
+$border-color:                      rgba(0,0,0,0.10);
+$padding-article-unordered-list:    30px;
+
+// Header config
+$header-background-color:           $white;
+$header-height:                     100px;
+$header-width:                      100%;
+
+// Hero config
+$hero-mobile-height:                500px;
+$hero-medium-plus-height:           500px;
+
+// Navigation config
+$navigation-active-color:           $accent-color;
+$navigation-regular-color:          $grey-scaled;
+$navigation-font-size:              18px;
+$navigation-dropdown-line:          $grey-30;
+$navigation-dropdown-font-size:     18px;
+
+// Slogan config
+$slogan-font-family:                'Kaushan Script', cursive;
+$slogan-text-color:                 $white;
+$slogan-font-size-mobile:           30px;
+$slogan-font-size-tablet-plus:      42px;
+
+// Titles config
+$titles-font-family:                'Montserrat', Helvetica, sans-serif;
+$titles-h1-font-size:               36px;
+$titles-h2-font-size:               24px;
+
+// Article config
+$article-link-color:                $grey-30;
+$article-link-active-color:         $navigation-active-color;
+$article-date-font-size:            16px;
+$article-date-font-style:           italic;
+
+// Sidebar config
+$sidebar-link-color:                $grey-lighten-1;
+$sidebar-link-active-color:         $grey-scaled;
+$sidebar-link-font-size:            16px;
+
+// Footer config
+$footer-height:                     300px;
+$footer-mobile-height:              475px;
+$footer-background-color:           $darkslategrey;
+
+// Read more config
+$read-more-border-color:            $darkslategrey;
+$read-more-font-size:               16px;
+$read-more-active-border-color:     $navigation-active-color;
+
+// Copyright config
+$copyright-background-color:        darken($darkslategrey, 30% );
+$copyright-height:                  50px;
+
+//Static images
+$hero-image: url(../img/hero-black-white.jpg);

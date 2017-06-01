@@ -1,0 +1,47 @@
+.logo {
+
+	padding-top: 20px;
+	padding-left: 5px;
+
+	width: auto;
+
+	@include grid-media( $medium-grid ) {
+
+		display: inline-block;
+
+	}
+
+	&__link {
+
+		display: block;
+		width: 140px;
+
+		margin: 0 auto;
+
+	}
+
+	&__img {
+
+		display: block;
+		margin: 0 auto;
+
+		height: 60px;
+		width: auto;
+
+		@include grid-media( $medium-grid ) {
+
+			display: inline-block;
+
+		}
+
+		&:hover {
+
+			transform: scale(1.1);
+
+		}
+
+		transition: all $transition-duration-default linear;
+
+	}
+
+}

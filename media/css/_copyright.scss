@@ -1,0 +1,30 @@
+.copyright {
+
+	width: 100%;
+	height: $copyright-height;
+
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	padding-top: 15px;
+
+	background: $copyright-background-color;
+
+	font-size: $font-size;
+	line-height: calc( #{$font-size} * 1.5 );
+
+	&__rights {
+
+		float: left;
+
+	}
+
+	&__powered {
+
+		float: right;
+
+	}
+
+}

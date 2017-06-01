@@ -1,0 +1,82 @@
+.lightbox {
+
+	transition: all .3s linear;
+
+	opacity: 0;
+	visibility: hidden;
+
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	z-index: 10;
+
+	background: rgba(0,0,0,.9);
+
+	&--visible {
+		visibility: visible;
+		opacity: 1;
+
+		transition: all .3s linear;
+	}
+
+	&__img-container {
+
+		position: relative;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		margin: auto;
+
+		transition: all .3s linear;
+	}
+
+	&__img {
+
+		display: block;
+
+		max-width: 80vw;
+		max-height: 80vh;
+
+		height: auto;
+
+		margin: auto;
+		margin-top: 10%;
+
+		z-index: 11;
+
+		transition: all .3s linear;
+
+		@include grid-media( $tablet-grid ) {
+
+			max-width: 60vw;
+			margin-top: 5%;
+
+		}
+
+	}
+
+	&__caption {
+
+		display: block;
+		max-width: 80%;
+
+		text-align: center;
+
+		margin: 0 auto;
+
+		color: $sidebar-link-color;
+
+	}
+
+	&__closeIcon {
+
+	}
+
+
+
+}
