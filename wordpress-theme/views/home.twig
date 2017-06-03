@@ -1,0 +1,34 @@
+{% extends "base.twig" %}
+{% block content %}
+    <h1 class="title__uppercase">Latest posts</h1>
+    <hr />
+    {% if posts %}
+        {% for post in posts %}
+            <article class="article">
+                <a class="title__link" href="{{ post.link }}"><h2 class="title__content">{{ post.post_title }}</h2></a>
+                <span class="article__small">Geplaatst op: <a class="article__link" href="{{ post.link }}" >{{ post.post_date|date }}</a></span>
+                {% if post.thumbnail %}
+                    <figure class="article__figure">
+                        <img class="article__img article__img--preview" src="{{ post.thumbnail.src }}" />
+                    </figure>
+                {% endif %}
+                <div class="article__content">
+                    <b>{{ post.get_preview(50, false, "Lees meer") }}</b>
+                </div>
+                <span class="article__small article__small--clearfix">Geplaatst in: <a class="article__link" href="{{ post.category.link }}">{{ post.category }}</a> <a class="article__link" href="{{ post.link }}">Laat een bericht achter</a></span>
+        </article>
+        {% endfor %}
+        {%  if pagination %}
+            <div class="content__pagination">
+                {% if pagination.prev %}
+                    <a href="{{ pagination.prev.link }}">Vorige</a>
+                {% endif %}
+                {% if pagination.next %}
+                    <a href="{{ pagination.next.link }}">Volgende</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% else %}
+        <p>Geen berichten gevonden</p>
+    {% endif %}
+{% endblock %}

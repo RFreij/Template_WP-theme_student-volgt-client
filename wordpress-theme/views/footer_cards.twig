@@ -1,0 +1,22 @@
+<div class="footer__item">
+    <h4 class="title__footer">Contactgegevens</h4>
+    {% if contact_email_adres %}
+        <a class="footer__link" href="mailto:{{ contact_email_adres }}">{{ contact_email_adres }}</a>
+    {% endif %}
+</div>
+<div class="footer__item">
+    <h4 class="title__footer">Deelnemende partijen</h4>
+    {% if deelnemende_partijen %}
+        <ul class="footer__list">
+        {% for partij in deelnemende_partijen %}
+            <li class="footer__list-item">
+                <a class="footer__link" href="{{ partij.url }}" target="_blank">{{ partij.post_title }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+<div class="footer__item">
+    <h4 class="title__footer">Volg ons op facebook</h4>
+    <div class="fb-page footer__center" data-href="https://www.facebook.com/studentvolgtclient" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/studentvolgtclient" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/studentvolgtclient">Student volgt cliënt</a></blockquote></div>
+</div>

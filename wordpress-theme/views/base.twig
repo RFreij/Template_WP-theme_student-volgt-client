@@ -1,0 +1,45 @@
+{% block html_head_container %}
+    {% include 'header.twig' %}
+{% endblock %}
+    </head>
+    <body data-template="base.twig" >
+        <header class="header">
+            <div class="row">
+                {% include 'logo.twig' %}
+                <nav class="navigation">
+                    <a class="hamburger" id="js-menu-toggle"><span class="hamburger__slice"></span><span class="hamburger__slice"></span><span class="hamburger__slice"></span></a>
+                    <div class="navigation__overlay"></div>
+                    {% include "menu.twig" with{ 'menu': menu.get_items }  %}
+                </nav>
+            </div>
+        </header>
+        {% if fn('is_front_page') %}
+            {% include 'hero.twig' %}
+        {% endif %}
+        <main class="main {% if fn('is_front_page') %}main--homepage{% endif %}">
+            <div class="row">
+                <section class="content">
+                    {% block content %}
+                    {% endblock %}
+                </section>
+                <aside class="sidebar">
+                    {{ sidebar }}
+                </aside>
+            </div>
+        </main>
+        <footer>
+            <div class="footer">
+                <div class="row">
+                    {% include 'footer_cards.twig' %}
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="row">
+                    {% include 'copyright.twig' %}
+                </div>
+            </div>
+        </footer>
+        {{ wp_footer }}
+        <script type="text/javascript" src="{{ site.theme.link }}/media/scripts/scripts.min.js"></script>
+    </body>
+</html>

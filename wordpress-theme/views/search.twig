@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+{% block content %}
+    <h1 class="title__uppercase">{{ title }}</h1>
+    {% if search_query %}
+        <div class="search">
+            <p>Zoekopdracht "<strong>{{ search_query }}</strong>" heeft <strong>{{ posts|length|number_format }}</strong> pagina's gevonden </p>
+        </div>
+        {% for post in posts %}
+            <article class="article">
+                <a class="title__link" href="{{ post.link }}"><h2 class="title__content">{{ post.post_title }}</h2></a>
+                {% if post.post_type == "post" %}
+                    <span class="article__small">Geplaatst op: <a class="article__link" href="{{ post.link }}" >{{ post.post_date|date }}</a></span>
+                    <span class="article__small">Geplaatst in: <a class="article__link" href="{{ post.category.link }}">{{ post.category }}</a> <a class="article__link" href="{{ post.link }}">Laat een bericht achter</a></span>
+                {% endif %}
+                {% if post.children %}
+                    <ul class="content__list">
+                        {% for child in post.children %}
+                        <li class="content__list-item"><a class="content__link" href="{{ child.link }}">{{ child.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </article>
+        {% endfor %}
+        {%  if pagination %}
+            <div class="content__pagination">
+                {% if pagination.prev %}
+                    <a href="{{ pagination.prev.link }}">Vorige</a>
+                {% endif %}
+                {% if pagination.next %}
+                    <a href="{{ pagination.net.link }}" >Volgende</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% else %}
+        <p>Geen berichten gevonden</p>
+    {% endif %}
+{% endblock %}

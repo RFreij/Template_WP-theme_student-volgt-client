@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+{% block content %}
+    <article class="article">
+        <h1 class="title__content">{{ post.post_title }}</h1>
+        <div class="article__content">
+            {{ post.content }}
+        </div>
+        {% if post.thumbnail %}
+            <figure class="article__figure">
+                <img class="article__img" src="{{ post.thumbnail.src }}" />
+                {% if post.thumbnail.caption %}
+                    <figcaption class="article__small article__small--clearfix">{{ post.thumbnail.caption }}</figcaption>
+                {% endif %}
+            </figure>
+        {% endif %}
+    </article>
+{% endblock %}

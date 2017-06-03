@@ -1,0 +1,24 @@
+{% extends "base.twig" %}
+{% block content %}
+    <article class="article">
+        <h1 class="title__content">{{ post.post_title }}</h1>
+        <span class="article__small">Geplaatst op: <a class="article__link" href="{{ post.link }}" >{{ post.post_date|date }}</a></span>
+        <div class="article__content">
+            {{ post.content }}
+        </div>
+        {% if post.thumbnail %}
+            <figure class="article__figure">
+                <img class="article__img" src="{{ post.thumbnail.src }}" />
+                {% if post.thumbnail.caption %}
+                    <figcaption class="article__small article__small--clearfix">{{ post.thumbnail.caption }}</figcaption>
+                {% endif %}
+            </figure>
+        {% endif %}
+    </article>
+    <div class="comments">
+        {% if post.comment_status == "open" %}
+        <h3 class="title__content">Reacties:</h3>
+        {{ function('comments_template') }}
+        {% endif %}
+    </div>
+{% endblock %}

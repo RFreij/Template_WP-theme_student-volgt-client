@@ -1,0 +1,18 @@
+{% if menu %}
+    <ul class="navigation__list">
+        {% for item in menu %}
+            <li class="navigation__item {% if item.get_children %} navigation__item--dropdown {% endif %}">
+                <a class="navigation__link {% if item.current %}navigation__link--active{% endif %}{% if item.get_children %} navigation__link--not-clickable{% endif %}" href="{{ item.get_link }}"> {{ item.title }} </a>
+                {% if item.get_children %}
+                <ul class="navigation__dropdown-content">
+                    {% for child in item.get_children %}
+                        <li class="navigation__dropdown-item">
+                            <a class="navigation__dropdown-link {% if child.current %}navigation__dropdown-link--active{% endif %}" href="{{ child.get_link }}">{{ child.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
